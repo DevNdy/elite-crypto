@@ -35,8 +35,8 @@ const SimpleCryptoData = ({
 };
 
 const SimpleCryptoDataStyled = styled.a`
-  height: 120px;
-  width: 200px;
+  height: 140px;
+  width: 240px;
   padding: 8px;
   background-color: ${theme.colors.white};
   border-radius: 8px;
@@ -57,19 +57,20 @@ const SimpleCryptoDataStyled = styled.a`
   }
 
   img {
-    height: 30px;
+    height: 40px;
     margin: 8px 0 8px;
   }
 
   h4 {
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
     color: black;
   }
 
   .changePrice {
     color: ${theme.colors.blackLight};
     font-weight: 100;
+    font-size: 14px;
     span {
       margin-left: 5px;
     }

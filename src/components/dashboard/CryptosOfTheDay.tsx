@@ -11,7 +11,7 @@ const CryptosOfTheDay = () => {
   return (
     <CryptosOfTheDayStyled>
       <SimpleCryptoData
-        titleData="Top Gainer"
+        titleData="Top Gagnant"
         imgCrypto={cryptoHighChange.iconUrl}
         nameCrypto={cryptoHighChange.name}
         priceChange={cryptoHighChange.change + "%"}
@@ -20,7 +20,7 @@ const CryptosOfTheDay = () => {
         link={cryptoHighChange.coinrankingUrl}
       />
       <SimpleCryptoData
-        titleData="Top Looser"
+        titleData="Top Perdant"
         imgCrypto={cryptoLowChange.iconUrl}
         nameCrypto={cryptoLowChange.name}
         priceChange={cryptoLowChange.change + "%"}
@@ -29,7 +29,7 @@ const CryptosOfTheDay = () => {
         link={cryptoLowChange.coinrankingUrl}
       />
       <SimpleCryptoData
-        titleData="New Listing"
+        titleData="Dernier ajout"
         imgCrypto={lastListingCrypto.iconUrl}
         nameCrypto={lastListingCrypto.name}
         priceChange={Number(lastListingCrypto.price).toFixed(4) + "$"}
