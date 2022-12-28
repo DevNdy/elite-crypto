@@ -10,7 +10,9 @@ type ContextProps = {
   nbrCoins: number;
   setNbrCoins: (newState: number) => void;
   cryptoHighChange: any;
-  setCryptoHighChange: (newState: any) => void;
+  cryptoLowChange: any;
+  lastListingCrypto: any;
+  topVolume: any;
 };
 
 const initialValue = {
@@ -19,6 +21,12 @@ const initialValue = {
   setNbrCoins: () => {},
   cryptoHighChange: [],
   setCryptoHighChange: () => {},
+  cryptoLowChange: [],
+  setCryptoLowChange: () => {},
+  lastListingCrypto: [],
+  setlastListingCrypto: () => {},
+  topVolume: [],
+  setTopVolume: () => {},
 };
 
 export const AppContext = createContext<ContextProps>(initialValue);
@@ -26,7 +34,10 @@ export const AppContext = createContext<ContextProps>(initialValue);
 export function AppContextProvider({ children }: ChildrenProps) {
   //cryptos:
   const [cryptos, setCryptos] = useState<any>(initialValue.cryptos);
-  const [cryptoHighChange, setCryptoHighChange] = useState([]);
+  const [cryptoHighChange, setCryptoHighChange] = useState(initialValue.cryptoHighChange);
+  const [cryptoLowChange, setCryptoLowChange] = useState(initialValue.cryptoLowChange);
+  const [lastListingCrypto, setlastListingCrypto] = useState(initialValue.lastListingCrypto);
+  const [topVolume, setTopVolume] = useState(initialValue.topVolume);
   const [nbrCoins, setNbrCoins] = useState(initialValue.nbrCoins);
 
   useEffect(() => {
@@ -62,6 +73,33 @@ export function AppContextProvider({ children }: ChildrenProps) {
       });
       setCryptoHighChange(strongest);
 
+      // Récupération de l'objet de crypto-monnaie ayant le taux de change le plus bas
+      const lowCrypto = data.data.coins.reduce((strongest: any, crypto: any) => {
+        if (Number(crypto.change) < Number(strongest.change)) {
+          return crypto;
+        }
+        return strongest;
+      });
+      setCryptoLowChange(lowCrypto);
+
+      // Récupération dernier listing
+      const lastListing = data.data.coins.reduce((strongest: any, crypto: any) => {
+        if (crypto.listedAt > strongest.listedAt) {
+          return crypto;
+        }
+        return strongest;
+      });
+      setlastListingCrypto(lastListing);
+
+      // Récupération le plus gros volume 24h
+      const volumeTop = data.data.coins.reduce((strongest: any, crypto: any) => {
+        if (crypto.marketCap > strongest.marketCap) {
+          return crypto;
+        }
+        return strongest;
+      });
+      setTopVolume(volumeTop);
+
       //-----
     } catch (err) {
       console.log(err);
@@ -70,7 +108,15 @@ export function AppContextProvider({ children }: ChildrenProps) {
 
   return (
     <AppContext.Provider
-      value={{ cryptos, nbrCoins, setNbrCoins, cryptoHighChange, setCryptoHighChange }}
+      value={{
+        cryptos,
+        nbrCoins,
+        setNbrCoins,
+        cryptoHighChange,
+        cryptoLowChange,
+        lastListingCrypto,
+        topVolume,
+      }}
     >
       {children}
     </AppContext.Provider>
