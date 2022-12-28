@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../theme/theme";
 
 const Dashboard = () => {
-  return <DashboardStyled>hello</DashboardStyled>;
+  return <DashboardStyled>bye</DashboardStyled>;
 };
 
 const DashboardStyled = styled.div`

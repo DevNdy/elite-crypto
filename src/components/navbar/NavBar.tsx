@@ -11,6 +11,9 @@ const NavBar = () => {
       <img src={logo} alt="logo" />
       <NavMenu />
       <NavSocialNetworks />
+      <p>
+        <i className="fa-solid fa-code"></i> réalisé par @DevNdy
+      </p>
     </NavBarStyled>
   );
 };
@@ -31,6 +34,15 @@ const NavBarStyled = styled.header`
   img {
     height: 40px;
     margin-top: 10px;
+  }
+
+  p {
+    position: fixed;
+    bottom: 0;
+    left: 60px;
+    font-size: 12px;
+    font-style: italic;
+    color: ${theme.colors.blackLight};
   }
 `;
 

@@ -31,6 +31,9 @@ const NavWithIconStyled = styled.li`
 
   span {
     margin: 0 15px 0 10px;
+    i {
+      font-size: 18px;
+    }
   }
 
   &:hover {
