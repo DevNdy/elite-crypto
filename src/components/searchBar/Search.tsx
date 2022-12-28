@@ -27,7 +27,7 @@ const SearchStyled = styled.div`
   }
 
   input {
-    width: 100%;
+    width: 250px;
     height: 25px;
     background-color: #f5f8fa;
     border: none;

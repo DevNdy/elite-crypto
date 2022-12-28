@@ -52,12 +52,12 @@ const CryptosOfTheDay = () => {
 
 const CryptosOfTheDayStyled = styled.div`
   height: 180px;
-  width: 75vw;
-  margin: 70px 0 0 250px;
+  width: 1100px;
+  margin: 70px 0 0 300px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export default CryptosOfTheDay;

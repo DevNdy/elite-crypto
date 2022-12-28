@@ -37,7 +37,6 @@ const SimpleCryptoData = ({
 const SimpleCryptoDataStyled = styled.a`
   height: 120px;
   width: 200px;
-  margin-left: 20px;
   padding: 8px;
   background-color: ${theme.colors.white};
   border-radius: 8px;
