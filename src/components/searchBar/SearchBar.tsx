@@ -24,10 +24,8 @@ const SearchBarStyled = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  left: 271px;
-  right: 0;
+  left: 272px;
   height: 60px;
-  width: 82%;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
   display: flex;
