@@ -1,9 +1,10 @@
 :root {
-  font-family: "Noto Nastaliq Urdu", serif;
+  font-family: "Lora", serif;
   font-size: 16px;
   font-weight: 400;
 }
 
 body {
   margin: 0;
+  color: #070707;
 }

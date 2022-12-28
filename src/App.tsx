@@ -1,8 +1,16 @@
-import styled from "styled-components";
-import { theme } from "./theme/theme";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/navbar/NavBar";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return <div>hello</div>;
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
