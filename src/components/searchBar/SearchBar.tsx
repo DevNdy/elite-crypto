@@ -46,6 +46,10 @@ const SearchBarStyled = styled.div`
       color: ${theme.colors.primaryColor};
       margin-left: 5px;
       cursor: pointer;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

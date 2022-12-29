@@ -47,7 +47,7 @@ const CryptoBarMarketStyled = styled.a`
   h4 {
     padding-left: 15px;
     width: 250px;
-
+    color: ${theme.colors.black};
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -67,12 +67,12 @@ const CryptoBarMarketStyled = styled.a`
 
   .change {
     width: 50px;
-    margin-right: 120px;
+    margin-right: 105px;
     text-align: end;
   }
 
   .price {
-    padding-right: 15px;
+    margin-right: 5px;
     width: 140px;
     text-align: end;
     color: ${theme.colors.black};

@@ -9,7 +9,10 @@ const Marketplace = () => {
   const { cryptos } = useContext(AppContext);
   return (
     <MarketplaceStyled>
-      <h3>Marketplace</h3>
+      <div className="divMarketplace">
+        <h3>Marketplace</h3>
+        <button>voir +</button>
+      </div>
       <IndexBarMarket />
       {cryptos.map((e: any) =>
         e.rank < 8 ? (
@@ -41,9 +44,28 @@ const MarketplaceStyled = styled.div`
   flex-direction: column;
   overflow: auto;
 
-  h3 {
-    margin: 8px 0 0 0;
-    font-size: 18px;
+  .divMarketplace {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      margin: 8px 0 0 0;
+      font-size: 18px;
+    }
+    button {
+      padding: 5px;
+      color: ${theme.colors.primaryColor};
+      background-color: ${theme.colors.secondaryColor};
+      border: 1px solid ${theme.colors.primaryColor};
+      border-radius: 8px;
+      cursor: pointer;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 `;
 

@@ -14,7 +14,7 @@ const IndexBarMarket = () => {
 
 const IndexBarMarketStyled = styled.div`
   height: 40px;
-  width: 680px;
+  width: 700px;
   margin-top: 30px;
   border-top: 0.3px solid ${theme.colors.blackLight};
   border-bottom: 0.3px solid ${theme.colors.blackLight};
