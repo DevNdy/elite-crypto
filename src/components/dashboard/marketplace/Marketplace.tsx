@@ -17,7 +17,7 @@ const Marketplace = () => {
       {cryptos.map((e: any) =>
         e.rank < 8 ? (
           <CryptoBarMarket
-            key={e.name}
+            key={e.uuid}
             nameCrypto={e.name}
             rank={e.rank}
             logo={e.iconUrl}
@@ -26,7 +26,7 @@ const Marketplace = () => {
             url={e.coinrankingUrl}
           />
         ) : (
-          <></>
+          <span key={e.uuid}></span>
         )
       )}
     </MarketplaceStyled>
