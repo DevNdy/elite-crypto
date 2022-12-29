@@ -11,17 +11,21 @@ const Marketplace = () => {
     <MarketplaceStyled>
       <h3>Marketplace</h3>
       <IndexBarMarket />
-      {cryptos.map((e: any) => (
-        <CryptoBarMarket
-          key={e.name}
-          nameCrypto={e.name}
-          rank={e.rank}
-          logo={e.iconUrl}
-          change={e.change}
-          price={e.price}
-          url={e.coinrankingUrl}
-        />
-      ))}
+      {cryptos.map((e: any) =>
+        e.rank < 8 ? (
+          <CryptoBarMarket
+            key={e.name}
+            nameCrypto={e.name}
+            rank={e.rank}
+            logo={e.iconUrl}
+            change={e.change + " %"}
+            price={Number(e.price).toFixed(3) + " $"}
+            url={e.coinrankingUrl}
+          />
+        ) : (
+          <></>
+        )
+      )}
     </MarketplaceStyled>
   );
 };
