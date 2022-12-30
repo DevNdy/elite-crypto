@@ -24,7 +24,7 @@ const SearchBarStyled = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  left: 272px;
+  left: 232px;
   height: 60px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
@@ -46,6 +46,10 @@ const SearchBarStyled = styled.div`
       color: ${theme.colors.primaryColor};
       margin-left: 5px;
       cursor: pointer;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 

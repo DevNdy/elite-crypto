@@ -12,11 +12,11 @@ const Search = () => {
 };
 
 const SearchStyled = styled.div`
-  margin-left: 20px;
+  margin-left: 28px;
   height: 40px;
   width: 300px;
   background-color: #f5f8fa;
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;

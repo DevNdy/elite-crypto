@@ -13,6 +13,12 @@ type ContextProps = {
   cryptoLowChange: any;
   lastListingCrypto: any;
   topVolume: any;
+  buyOrSell: boolean;
+  setBuyOrSell: (newState: boolean) => void;
+  priceCryptoSelect: number;
+  setPriceCryptoSelect: (newState: number) => void;
+  amountBuy: number;
+  setAmountBuy: (newState: number) => void;
 };
 
 const initialValue = {
@@ -27,6 +33,12 @@ const initialValue = {
   setlastListingCrypto: () => {},
   topVolume: [],
   setTopVolume: () => {},
+  buyOrSell: false,
+  setBuyOrSell: () => {},
+  priceCryptoSelect: 0,
+  setPriceCryptoSelect: () => {},
+  amountBuy: 0,
+  setAmountBuy: () => {},
 };
 
 export const AppContext = createContext<ContextProps>(initialValue);
@@ -106,6 +118,11 @@ export function AppContextProvider({ children }: ChildrenProps) {
     }
   };
 
+  //operation buy - sell
+  const [buyOrSell, setBuyOrSell] = useState(false);
+  const [priceCryptoSelect, setPriceCryptoSelect] = useState(initialValue.priceCryptoSelect);
+  const [amountBuy, setAmountBuy] = useState(initialValue.amountBuy);
+
   return (
     <AppContext.Provider
       value={{
@@ -116,6 +133,12 @@ export function AppContextProvider({ children }: ChildrenProps) {
         cryptoLowChange,
         lastListingCrypto,
         topVolume,
+        buyOrSell,
+        setBuyOrSell,
+        priceCryptoSelect,
+        setPriceCryptoSelect,
+        amountBuy,
+        setAmountBuy,
       }}
     >
       {children}
