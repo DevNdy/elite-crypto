@@ -35,7 +35,7 @@ const Marketplace = () => {
 
 const MarketplaceStyled = styled.div`
   height: 64vh;
-  width: 700px;
+  width: 750px;
   padding: 10px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
@@ -45,7 +45,7 @@ const MarketplaceStyled = styled.div`
   overflow: auto;
 
   .divMarketplace {
-    width: 700px;
+    width: 750px;
     display: flex;
     flex-direction: row;
     align-items: center;

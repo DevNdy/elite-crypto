@@ -27,7 +27,7 @@ const CryptoBarMarket = ({ rank, logo, nameCrypto, change, price, url }: CryptoB
 };
 
 const CryptoBarMarketStyled = styled.a`
-  width: 680px;
+  width: 730px;
   height: 40px;
   margin-top: 25px;
   text-decoration: none;
@@ -42,6 +42,7 @@ const CryptoBarMarketStyled = styled.a`
   &:hover {
     border-top: 0.5px solid ${theme.colors.blackLight};
     border-bottom: 0.5px solid ${theme.colors.blackLight};
+    background-color: ${theme.colors.secondaryColor};
   }
 
   h4 {

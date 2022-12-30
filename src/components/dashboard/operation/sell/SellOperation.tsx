@@ -43,7 +43,7 @@ const SellOperationStyled = styled.div`
   }
 
   input {
-    height: 25px;
+    height: 33px;
     width: 80px;
     padding-left: 8px;
     border: 0.5px solid ${theme.colors.blackLight};

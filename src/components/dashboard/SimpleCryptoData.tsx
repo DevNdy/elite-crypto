@@ -49,6 +49,10 @@ const SimpleCryptoDataStyled = styled.a`
   cursor: pointer;
   text-decoration: none;
 
+  &:hover {
+    background-color: ${theme.colors.secondaryColor};
+  }
+
   p {
     margin: 0;
     color: ${theme.colors.blackLight};

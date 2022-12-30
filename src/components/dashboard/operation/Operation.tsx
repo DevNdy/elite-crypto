@@ -14,6 +14,7 @@ const Operation = () => {
   function handleClickBuy() {
     if (priceCryptoSelect.toString() !== "0") {
       alert("Désolé, l'achat et vente de cryptomonnaies n'est pas encore disponible..");
+      setMessageErr("");
     } else {
       setMessageErr("! veuillez selectionner une cryptomonnaie !");
     }
@@ -65,6 +66,9 @@ const OperationStyled = styled.div`
     border-radius: 5px;
     font-size: 17px;
     cursor: pointer;
+    &:hover {
+      opacity: 0.95;
+    }
   }
 
   .messErr {

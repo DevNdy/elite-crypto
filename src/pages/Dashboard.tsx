@@ -31,7 +31,7 @@ const DashboardStyled = styled.div`
   .divMarketOperation {
     display: flex;
     flex-direction: row;
-    margin: 10px 0 0 300px;
+    margin: 10px 0 0 260px;
   }
 `;
 
