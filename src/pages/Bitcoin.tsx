@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import ChartBitcoin from "../components/bitcoin/ChartBitcoin";
-import DataBitcoin from "../components/bitcoin/DataBitcoin";
+import DescriptionBitcoin from "../components/bitcoin/DescriptionBitcoin";
+import DonutsMC from "../components/bitcoin/DonutsMC";
+import InfosBitcoin from "../components/bitcoin/InfosBitcoin";
 import { theme } from "../theme/theme";
 
 const Bitcoin = () => {
@@ -9,7 +11,11 @@ const Bitcoin = () => {
     <BitcoinStyled>
       <div className="top">
         <ChartBitcoin />
-        <DataBitcoin />
+        <InfosBitcoin />
+      </div>
+      <div className="bottom">
+        <DescriptionBitcoin />
+        <DonutsMC />
       </div>
     </BitcoinStyled>
   );
@@ -27,6 +33,11 @@ const BitcoinStyled = styled.div`
   justify-content: flex-start;
 
   .top {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .bottom {
     display: flex;
     flex-direction: row;
   }

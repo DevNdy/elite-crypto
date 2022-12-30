@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
 
-const DataBitcoin = () => {
+const InfosBitcoin = () => {
   const { cryptos } = useContext(AppContext);
 
+  //séparateur millier
   function numStr(a: any, b: any) {
     a = "" + a;
     b = b || " ";
@@ -21,12 +22,9 @@ const DataBitcoin = () => {
     return c;
   }
 
-  console.log(cryptos);
-
   return (
-    <DataBitcoinStyled>
+    <InfosBitcoinStyled>
       <h2>Fiche Bitcoin</h2>
-
       {cryptos
         .filter((f: any) => f.symbol === "BTC")
         .map((e: any) => (
@@ -44,21 +42,25 @@ const DataBitcoin = () => {
               Symbol: <span>{e.symbol}</span>
             </li>
             <li>
-              Change: <span style={{ color: e.change > "0" ? "green" : "red" }}>{e.change}%</span>
+              Change 24h:{" "}
+              <span style={{ color: e.change > "0" ? "green" : "red" }}>{e.change}%</span>
             </li>
             <li>
               MarketCap: <span>{numStr(e.marketCap, "")} $</span>
+            </li>
+            <li>
+              Nbr de token max: <span>21 000 000</span>
             </li>
             <a href={e.coinrankingUrl} target="_blank" rel="noopener noreferrer">
               voir +
             </a>
           </ul>
         ))}
-    </DataBitcoinStyled>
+    </InfosBitcoinStyled>
   );
 };
 
-const DataBitcoinStyled = styled.div`
+const InfosBitcoinStyled = styled.div`
   height: 384px;
   width: 304px;
   margin: 80px 0 0 20px;
@@ -88,6 +90,7 @@ const DataBitcoinStyled = styled.div`
       span {
         margin-left: 10px;
         font-weight: 100;
+        color: ${theme.colors.blackLight};
       }
       img {
         margin-left: 15px;
@@ -112,4 +115,4 @@ const DataBitcoinStyled = styled.div`
   }
 `;
 
-export default DataBitcoin;
+export default InfosBitcoin;

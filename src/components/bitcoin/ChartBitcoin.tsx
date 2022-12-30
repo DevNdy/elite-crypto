@@ -103,6 +103,7 @@ const ChartBitcoin = () => {
             title: {
               display: true,
               text: "Graphique Bitcoin 1h",
+              color: "#262730",
               font: {
                 size: 20,
               },
