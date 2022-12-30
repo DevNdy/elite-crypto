@@ -12,8 +12,6 @@ interface ChartBitcoinProps {
 const ChartBitcoin = () => {
   const [bitcoin, setBitcoin] = useState([]);
 
-  console.log(bitcoin);
-
   useEffect(() => {
     const options = {
       method: "GET",
