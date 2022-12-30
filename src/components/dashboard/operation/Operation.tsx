@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
-import BuyOperation from "./BuyOperation";
+import BuyOperation from "./buy/BuyOperation";
 import SliderBuySell from "./SliderBuySell";
 
 const Operation = () => {
