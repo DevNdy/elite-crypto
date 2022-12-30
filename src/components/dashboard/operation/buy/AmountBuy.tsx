@@ -11,7 +11,7 @@ const AmountBuy = () => {
       <input
         type="number"
         value={amountBuy}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmountBuy(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAmountBuy(Number(e.target.value))}
         required
       />
       <h3 className="symbol">$</h3>

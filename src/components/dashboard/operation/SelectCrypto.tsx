@@ -1,17 +1,14 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { AppContext } from "../../../../context/Context";
-import { theme } from "../../../../theme/theme";
+import { AppContext } from "../../../context/Context";
+import { theme } from "../../../theme/theme";
 
-const SelectCryptoBuy = () => {
-  const { cryptos, priceCryptoBuySelect, setPriceCryptoBuySelect } = useContext(AppContext);
+const SelectCrypto = () => {
+  const { cryptos, priceCryptoSelect, setPriceCryptoSelect } = useContext(AppContext);
 
   return (
-    <SelectCryptoBuyStyled>
-      <select
-        value={priceCryptoBuySelect}
-        onChange={(e: any) => setPriceCryptoBuySelect(e.target.value)}
-      >
+    <SelectCryptoStyled>
+      <select value={priceCryptoSelect} onChange={(e: any) => setPriceCryptoSelect(e.target.value)}>
         <option value="0">Choix crypto</option>
         {cryptos
           .filter((f: any) => f.rank < 6)
@@ -21,12 +18,12 @@ const SelectCryptoBuy = () => {
             </option>
           ))}
       </select>
-      <h5>{priceCryptoBuySelect} $</h5>
-    </SelectCryptoBuyStyled>
+      <h5>{priceCryptoSelect} $</h5>
+    </SelectCryptoStyled>
   );
 };
 
-const SelectCryptoBuyStyled = styled.div`
+const SelectCryptoStyled = styled.div`
   height: 40px;
   border: 0.5px solid ${theme.colors.blackLight};
   border-radius: 5px;
@@ -50,4 +47,4 @@ const SelectCryptoBuyStyled = styled.div`
   }
 `;
 
-export default SelectCryptoBuy;
+export default SelectCrypto;

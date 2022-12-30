@@ -15,10 +15,10 @@ type ContextProps = {
   topVolume: any;
   buyOrSell: boolean;
   setBuyOrSell: (newState: boolean) => void;
-  priceCryptoBuySelect: number;
-  setPriceCryptoBuySelect: (newState: number) => void;
-  amountBuy: string;
-  setAmountBuy: (newState: string) => void;
+  priceCryptoSelect: number;
+  setPriceCryptoSelect: (newState: number) => void;
+  amountBuy: number;
+  setAmountBuy: (newState: number) => void;
 };
 
 const initialValue = {
@@ -35,9 +35,9 @@ const initialValue = {
   setTopVolume: () => {},
   buyOrSell: false,
   setBuyOrSell: () => {},
-  priceCryptoBuySelect: 0,
-  setPriceCryptoBuySelect: () => {},
-  amountBuy: "0",
+  priceCryptoSelect: 0,
+  setPriceCryptoSelect: () => {},
+  amountBuy: 0,
   setAmountBuy: () => {},
 };
 
@@ -120,9 +120,7 @@ export function AppContextProvider({ children }: ChildrenProps) {
 
   //operation buy - sell
   const [buyOrSell, setBuyOrSell] = useState(false);
-  const [priceCryptoBuySelect, setPriceCryptoBuySelect] = useState(
-    initialValue.priceCryptoBuySelect
-  );
+  const [priceCryptoSelect, setPriceCryptoSelect] = useState(initialValue.priceCryptoSelect);
   const [amountBuy, setAmountBuy] = useState(initialValue.amountBuy);
 
   return (
@@ -137,8 +135,8 @@ export function AppContextProvider({ children }: ChildrenProps) {
         topVolume,
         buyOrSell,
         setBuyOrSell,
-        priceCryptoBuySelect,
-        setPriceCryptoBuySelect,
+        priceCryptoSelect,
+        setPriceCryptoSelect,
         amountBuy,
         setAmountBuy,
       }}

@@ -1,19 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
 import BuyOperation from "./buy/BuyOperation";
+import SellOperation from "./sell/SellOperation";
 import SliderBuySell from "./SliderBuySell";
 
 const Operation = () => {
-  const { buyOrSell, setBuyOrSell } = useContext(AppContext);
+  const { buyOrSell, priceCryptoSelect } = useContext(AppContext);
+
+  const [messageErr, setMessageErr] = useState<string>("");
+
+  function handleClickBuy() {
+    if (priceCryptoSelect.toString() !== "0") {
+      alert("Désolé, l'achat et vente de cryptomonnaies n'est pas encore disponible..");
+    } else {
+      setMessageErr("! veuillez selectionner une cryptomonnaie !");
+    }
+  }
   return (
     <OperationStyled>
       <div className="divOperation">
         <h3>Opération</h3>
         <SliderBuySell />
       </div>
-      <BuyOperation />
+      {buyOrSell ? <SellOperation /> : <BuyOperation />}
+      <button onClick={handleClickBuy}>{buyOrSell ? "valider la vente" : "valider l'achat"}</button>
+      <p className="messErr">{messageErr}</p>
+      <p>
+        * Ceci est une estimation, cela peut légèrement varier pour des raisons multiples: <br /> -
+        Le prix du token a changé. <br /> - Des frais de transaction peuvent être appliqué.
+      </p>
     </OperationStyled>
   );
 };
@@ -38,6 +55,30 @@ const OperationStyled = styled.div`
     h3 {
       margin-top: 10px;
     }
+  }
+
+  button {
+    height: 35px;
+    background-color: ${theme.colors.primaryColor};
+    color: ${theme.colors.white};
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  .messErr {
+    font-weight: 100;
+    color: #7c1010;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  p {
+    margin-top: 30px;
+    font-size: 13px;
+    color: ${theme.colors.blackLight};
   }
 `;
 
