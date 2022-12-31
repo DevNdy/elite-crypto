@@ -63,7 +63,7 @@ const InfosBitcoin = () => {
 const InfosBitcoinStyled = styled.div`
   height: 384px;
   width: 304px;
-  margin: 80px 0 0 20px;
+  margin: 60px 0 0 20px;
   padding: 8px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;

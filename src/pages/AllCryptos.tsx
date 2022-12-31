@@ -19,8 +19,8 @@ const AllCryptosStyled = styled.div`
   background-color: ${theme.colors.light};
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default AllCryptos;

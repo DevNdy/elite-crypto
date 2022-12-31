@@ -62,7 +62,7 @@ const DonutsMC = () => {
 };
 
 const DonutsMCStyled = styled.div`
-  height: 300px;
+  max-height: 300px;
   width: 320px;
   margin: 20px 0 0 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;

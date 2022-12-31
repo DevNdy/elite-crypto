@@ -29,7 +29,7 @@ const TopTenCrypto = () => {
 const TopTenCryptoStyled = styled.div`
   height: 705px;
   width: 545px;
-  margin: 80px 0 0 260px;
+  margin: 55px 0 0 230px;
   padding: 10px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
