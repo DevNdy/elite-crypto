@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
 import ModalBarCryptomonnaie from "./ModalBarCryptomonnaie";
+import { CryptosProps } from "../props/propsType";
 
 const TopTenCrypto = () => {
   const { cryptos } = useContext(AppContext);
@@ -10,8 +11,8 @@ const TopTenCrypto = () => {
   return (
     <TopTenCryptoStyled>
       {cryptos
-        .filter((f: any) => f.rank < 14)
-        .map((e: any) => (
+        .filter((f: CryptosProps) => f.rank < 14)
+        .map((e: CryptosProps) => (
           <ModalBarCryptomonnaie
             key={e.uuid}
             nameCrypto={e.name}
