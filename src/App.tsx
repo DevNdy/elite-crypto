@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import SearchBar from "./components/searchBar/SearchBar";
 import styled from "styled-components";
 import Bitcoin from "./pages/Bitcoin";
+import AllCryptos from "./pages/AllCryptos";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/bitcoin" element={<Bitcoin />} />
+        <Route path="/cryptomonnaies" element={<AllCryptos />} />
       </Routes>
     </>
   );

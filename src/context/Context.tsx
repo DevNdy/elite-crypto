@@ -111,8 +111,6 @@ export function AppContextProvider({ children }: ChildrenProps) {
         return strongest;
       });
       setTopVolume(volumeTop);
-
-      //-----
     } catch (err) {
       console.log(err);
     }
