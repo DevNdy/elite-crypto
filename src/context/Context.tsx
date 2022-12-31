@@ -7,10 +7,10 @@ interface ChildrenProps {
 
 type ContextProps = {
   cryptos: any;
-  cryptoHighChange: string[];
-  cryptoLowChange: string[];
-  lastListingCrypto: string[];
-  topVolume: string[];
+  cryptoHighChange: any;
+  cryptoLowChange: any;
+  lastListingCrypto: any;
+  topVolume: any;
   buyOrSell: boolean;
   setBuyOrSell: (newState: boolean) => void;
   priceCryptoSelect: number;

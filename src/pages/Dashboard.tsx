@@ -25,13 +25,13 @@ const DashboardStyled = styled.div`
   background-color: ${theme.colors.light};
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
   .divMarketOperation {
     display: flex;
     flex-direction: row;
-    margin: 10px 0 0 260px;
+    margin: 10px 0 0 240px;
   }
 `;
 
