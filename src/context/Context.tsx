@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import { CryptosProps } from "../components/props/propsType";
 
 interface ChildrenProps {
   children: React.ReactNode;
@@ -7,12 +7,10 @@ interface ChildrenProps {
 
 type ContextProps = {
   cryptos: any;
-  nbrCoins: number;
-  setNbrCoins: (newState: number) => void;
-  cryptoHighChange: any;
-  cryptoLowChange: any;
-  lastListingCrypto: any;
-  topVolume: any;
+  cryptoHighChange: string[];
+  cryptoLowChange: string[];
+  lastListingCrypto: string[];
+  topVolume: string[];
   buyOrSell: boolean;
   setBuyOrSell: (newState: boolean) => void;
   priceCryptoSelect: number;
@@ -23,8 +21,6 @@ type ContextProps = {
 
 const initialValue = {
   cryptos: [],
-  nbrCoins: 10,
-  setNbrCoins: () => {},
   cryptoHighChange: [],
   setCryptoHighChange: () => {},
   cryptoLowChange: [],
@@ -44,13 +40,12 @@ const initialValue = {
 export const AppContext = createContext<ContextProps>(initialValue);
 
 export function AppContextProvider({ children }: ChildrenProps) {
-  //cryptos:
+  //---------------cryptos---------------------
   const [cryptos, setCryptos] = useState<any>(initialValue.cryptos);
   const [cryptoHighChange, setCryptoHighChange] = useState(initialValue.cryptoHighChange);
   const [cryptoLowChange, setCryptoLowChange] = useState(initialValue.cryptoLowChange);
   const [lastListingCrypto, setlastListingCrypto] = useState(initialValue.lastListingCrypto);
   const [topVolume, setTopVolume] = useState(initialValue.topVolume);
-  const [nbrCoins, setNbrCoins] = useState(initialValue.nbrCoins);
 
   useEffect(() => {
     fetchCryptos();
@@ -77,7 +72,7 @@ export function AppContextProvider({ children }: ChildrenProps) {
       setCryptos(data.data.coins);
 
       // Récupération de l'objet de crypto-monnaie ayant le taux de change le plus haut
-      const strongest = data.data.coins.reduce((strongest: any, crypto: any) => {
+      const strongest = data.data.coins.reduce((strongest: CryptosProps, crypto: CryptosProps) => {
         if (crypto.change > strongest.change) {
           return crypto;
         }
@@ -86,7 +81,7 @@ export function AppContextProvider({ children }: ChildrenProps) {
       setCryptoHighChange(strongest);
 
       // Récupération de l'objet de crypto-monnaie ayant le taux de change le plus bas
-      const lowCrypto = data.data.coins.reduce((strongest: any, crypto: any) => {
+      const lowCrypto = data.data.coins.reduce((strongest: CryptosProps, crypto: CryptosProps) => {
         if (Number(crypto.change) < Number(strongest.change)) {
           return crypto;
         }
@@ -95,16 +90,18 @@ export function AppContextProvider({ children }: ChildrenProps) {
       setCryptoLowChange(lowCrypto);
 
       // Récupération dernier listing
-      const lastListing = data.data.coins.reduce((strongest: any, crypto: any) => {
-        if (crypto.listedAt > strongest.listedAt) {
-          return crypto;
+      const lastListing = data.data.coins.reduce(
+        (strongest: CryptosProps, crypto: CryptosProps) => {
+          if (crypto.listedAt > strongest.listedAt) {
+            return crypto;
+          }
+          return strongest;
         }
-        return strongest;
-      });
+      );
       setlastListingCrypto(lastListing);
 
       // Récupération le plus gros volume 24h
-      const volumeTop = data.data.coins.reduce((strongest: any, crypto: any) => {
+      const volumeTop = data.data.coins.reduce((strongest: CryptosProps, crypto: CryptosProps) => {
         if (crypto.marketCap > strongest.marketCap) {
           return crypto;
         }
@@ -116,7 +113,7 @@ export function AppContextProvider({ children }: ChildrenProps) {
     }
   };
 
-  //operation buy - sell
+  //----------------operation buy - sell-----------------------------
   const [buyOrSell, setBuyOrSell] = useState(false);
   const [priceCryptoSelect, setPriceCryptoSelect] = useState(initialValue.priceCryptoSelect);
   const [amountBuy, setAmountBuy] = useState(initialValue.amountBuy);
@@ -125,8 +122,6 @@ export function AppContextProvider({ children }: ChildrenProps) {
     <AppContext.Provider
       value={{
         cryptos,
-        nbrCoins,
-        setNbrCoins,
         cryptoHighChange,
         cryptoLowChange,
         lastListingCrypto,

@@ -5,6 +5,7 @@ import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
 import CryptoBarMarket from "./CryptoBarMarket";
 import IndexBarMarket from "./IndexBarMarket";
+import { CryptosProps } from "../../props/propsType";
 
 const Marketplace = () => {
   const { cryptos } = useContext(AppContext);
@@ -23,7 +24,7 @@ const Marketplace = () => {
         <button onClick={() => toRoute("/cryptomonnaies")}>voir +</button>
       </div>
       <IndexBarMarket />
-      {cryptos.map((e: any) =>
+      {cryptos.map((e: CryptosProps) =>
         e.rank < 8 ? (
           <CryptoBarMarket
             key={e.uuid}

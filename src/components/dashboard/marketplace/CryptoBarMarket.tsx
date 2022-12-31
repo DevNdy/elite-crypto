@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../../theme/theme";
 
 export type CryptoBarMarketProps = {
-  rank: string;
+  rank: number;
   logo: string;
   nameCrypto: string;
   change: string;

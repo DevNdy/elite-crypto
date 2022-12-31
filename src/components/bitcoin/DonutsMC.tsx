@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
 import { Doughnut } from "react-chartjs-2";
+import { CryptosProps } from "../props/propsType";
 
 const DonutsMC = () => {
   const { cryptos } = useContext(AppContext);
@@ -18,25 +19,25 @@ const DonutsMC = () => {
               label: "marketCap",
               data: cryptos
                 .filter(
-                  (f: any) =>
+                  (f: CryptosProps) =>
                     f.name === "Bitcoin" ||
                     f.name === "Ethereum" ||
                     f.name === "Tether USD" ||
                     f.name === "USDC" ||
                     f.name === "BNB"
                 )
-                .map((e: any) => e.marketCap),
+                .map((e: CryptosProps) => e.marketCap),
               borderColor: "white",
               backgroundColor: cryptos
                 .filter(
-                  (f: any) =>
+                  (f: CryptosProps) =>
                     f.name === "Bitcoin" ||
                     f.name === "Ethereum" ||
                     f.name === "Tether USD" ||
                     f.name === "USDC" ||
                     f.name === "BNB"
                 )
-                .map((e: any) => e.color),
+                .map((e: CryptosProps) => e.color),
               hoverOffset: 7,
             },
           ],

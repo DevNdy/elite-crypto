@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
+import { CryptosProps } from "../../props/propsType";
 
 const SelectCrypto = () => {
   const { cryptos, priceCryptoSelect, setPriceCryptoSelect } = useContext(AppContext);
@@ -11,8 +12,8 @@ const SelectCrypto = () => {
       <select value={priceCryptoSelect} onChange={(e: any) => setPriceCryptoSelect(e.target.value)}>
         <option value="0">Choix crypto</option>
         {cryptos
-          .filter((f: any) => f.rank < 6)
-          .map((e: any) => (
+          .filter((f: CryptosProps) => f.rank < 6)
+          .map((e: CryptosProps) => (
             <option key={e.name} value={Number(e.price).toFixed(2)}>
               {e.symbol}
             </option>
