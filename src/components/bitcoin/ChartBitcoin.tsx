@@ -10,7 +10,7 @@ interface ChartBitcoinProps {
 }
 
 const ChartBitcoin = () => {
-  const [bitcoin, setBitcoin] = useState([]);
+  const [bitcoin, setBitcoin] = useState<[]>([]);
 
   useEffect(() => {
     const options = {
@@ -29,8 +29,6 @@ const ChartBitcoin = () => {
       .then((response) => setBitcoin(response.data.history))
       .catch((err) => console.error(err));
   }, []);
-
-  const [graphAnim, setGraphAnim] = useState(true);
 
   return (
     <ChartBitcoinStyled>
@@ -59,15 +57,6 @@ const ChartBitcoin = () => {
           ],
         }}
         options={{
-          animations: {
-            tension: {
-              duration: 2000,
-              easing: "easeInOutCirc",
-              from: 0,
-              to: 0,
-              loop: graphAnim,
-            },
-          },
           scales: {
             y: {
               border: {
@@ -121,7 +110,7 @@ const ChartBitcoin = () => {
 const ChartBitcoinStyled = styled.div`
   height: 400px;
   width: 820px;
-  margin: 80px 0 0 260px;
+  margin: 60px 0 0 240px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
   border-radius: 5px;
   background-color: ${theme.colors.white};

@@ -1,20 +1,30 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
 import CryptoBarMarket from "./CryptoBarMarket";
 import IndexBarMarket from "./IndexBarMarket";
+import { CryptosProps } from "../../props/propsType";
 
 const Marketplace = () => {
   const { cryptos } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  function toRoute(route: string) {
+    navigate({
+      pathname: route,
+    });
+  }
+
   return (
     <MarketplaceStyled>
       <div className="divMarketplace">
         <h3>Marketplace</h3>
-        <button>voir +</button>
+        <button onClick={() => toRoute("/cryptomonnaies")}>voir +</button>
       </div>
       <IndexBarMarket />
-      {cryptos.map((e: any) =>
+      {cryptos.map((e: CryptosProps) =>
         e.rank < 8 ? (
           <CryptoBarMarket
             key={e.uuid}

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../theme/theme";
 
-type CryptoBarMarketProps = {
-  rank: string;
+export type CryptoBarMarketProps = {
+  rank: number;
   logo: string;
   nameCrypto: string;
   change: string;

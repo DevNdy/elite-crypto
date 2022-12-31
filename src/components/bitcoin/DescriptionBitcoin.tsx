@@ -27,7 +27,7 @@ const DescriptionBitcoin = () => {
 const DescriptionBitcoinStyled = styled.article`
   height: 300px;
   width: 820px;
-  margin: 20px 0 0 260px;
+  margin: 20px 0 0 240px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
   border-radius: 5px;
   background-color: ${theme.colors.white};

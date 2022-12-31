@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
+import { CryptosProps } from "../props/propsType";
 
 const InfosBitcoin = () => {
   const { cryptos } = useContext(AppContext);
@@ -26,8 +27,8 @@ const InfosBitcoin = () => {
     <InfosBitcoinStyled>
       <h2>Fiche Bitcoin</h2>
       {cryptos
-        .filter((f: any) => f.symbol === "BTC")
-        .map((e: any) => (
+        .filter((f: CryptosProps) => f.symbol === "BTC")
+        .map((e: CryptosProps) => (
           <ul key={e.uuid}>
             <li>
               Prix: <span>{numStr(Number(e.price).toFixed(0), "")} $</span>
@@ -63,7 +64,7 @@ const InfosBitcoin = () => {
 const InfosBitcoinStyled = styled.div`
   height: 384px;
   width: 304px;
-  margin: 80px 0 0 20px;
+  margin: 60px 0 0 20px;
   padding: 8px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
