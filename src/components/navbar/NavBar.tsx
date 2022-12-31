@@ -39,7 +39,7 @@ const NavBarStyled = styled.header`
   p {
     position: fixed;
     bottom: 0;
-    left: 60px;
+    left: 50px;
     font-size: 12px;
     font-style: italic;
     color: ${theme.colors.blackLight};

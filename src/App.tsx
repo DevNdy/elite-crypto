@@ -3,6 +3,7 @@ import NavBar from "./components/navbar/NavBar";
 import Dashboard from "./pages/Dashboard";
 import SearchBar from "./components/searchBar/SearchBar";
 import styled from "styled-components";
+import Bitcoin from "./pages/Bitcoin";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <SearchBar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/bitcoin" element={<Bitcoin />} />
       </Routes>
     </>
   );
