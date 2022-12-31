@@ -37,6 +37,7 @@ const SelectCryptoStyled = styled.div`
     width: 95px;
     border: none;
     margin-left: 10px;
+    cursor: pointer;
     &:focus {
       outline-color: ${theme.colors.primaryColor};
     }

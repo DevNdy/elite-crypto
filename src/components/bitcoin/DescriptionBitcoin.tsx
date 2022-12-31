@@ -40,6 +40,7 @@ const DescriptionBitcoinStyled = styled.article`
   p {
     margin: 25px 15px 0 15px;
     color: ${theme.colors.black};
+    opacity: 0.8;
 
     span {
       font-style: italic;
