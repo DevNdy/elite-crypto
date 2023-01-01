@@ -20,8 +20,8 @@ const DocCrypto = () => {
 };
 
 const DocCryptoStyled = styled.article`
-  height: 240px;
-  width: 480px;
+  height: 250px;
+  width: 500px;
   padding: 10px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
@@ -32,11 +32,13 @@ const DocCryptoStyled = styled.article`
 
   h3 {
     margin: 0;
+    color: ${theme.colors.black};
   }
 
   p {
-    margin: 10px 0;
+    margin: 20px 0;
     font-size: 15px;
+    opacity: 0.8;
   }
 `;
 

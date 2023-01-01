@@ -14,8 +14,8 @@ const SchemaDocCrypto = () => {
 };
 
 const SchemaDocCryptoStyled = styled.div`
-  height: 340px;
-  width: 480px;
+  height: 390px;
+  width: 500px;
   margin-top: 20px;
   padding: 10px;
   background-color: ${theme.colors.white};
@@ -26,8 +26,8 @@ const SchemaDocCryptoStyled = styled.div`
   align-items: flex-start;
 
   img {
-    height: 340px;
-    width: 480px;
+    height: 380px;
+    width: 500px;
   }
 `;
 
