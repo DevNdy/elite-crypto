@@ -53,7 +53,7 @@ const CryptosOfTheDay = () => {
 const CryptosOfTheDayStyled = styled.div`
   height: 180px;
   width: 1160px;
-  margin: 70px 0 0 260px;
+  margin: 50px 0 0 240px;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import CryptosOfTheDay from "../components/dashboard/CryptosOfTheDay";
 import Marketplace from "../components/dashboard/marketplace/Marketplace";
 import Operation from "../components/dashboard/operation/Operation";
-import { AppContext } from "../context/Context";
 import { theme } from "../theme/theme";
 
 const Dashboard = () => {
@@ -25,13 +24,13 @@ const DashboardStyled = styled.div`
   background-color: ${theme.colors.light};
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
   .divMarketOperation {
     display: flex;
     flex-direction: row;
-    margin: 10px 0 0 260px;
+    margin: 10px 0 0 240px;
   }
 `;
 

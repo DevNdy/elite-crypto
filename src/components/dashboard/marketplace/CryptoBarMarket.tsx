@@ -19,6 +19,7 @@ const CryptoBarMarket = ({ rank, logo, nameCrypto, change, price, url }: CryptoB
         {nameCrypto}
       </h4>
       <h5 className="change" style={{ color: change > "0" ? "green" : "red" }}>
+        {change > "0" ? "+" : ""}
         {change}
       </h5>
       <h5 className="price">{price}</h5>

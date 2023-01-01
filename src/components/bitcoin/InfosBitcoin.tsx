@@ -7,7 +7,7 @@ import { CryptosProps } from "../props/propsType";
 const InfosBitcoin = () => {
   const { cryptos } = useContext(AppContext);
 
-  //séparateur millier
+  //thousand separator
   function numStr(a: any, b: any) {
     a = "" + a;
     b = b || " ";
