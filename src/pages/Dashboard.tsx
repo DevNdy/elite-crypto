@@ -3,7 +3,6 @@ import styled from "styled-components";
 import CryptosOfTheDay from "../components/dashboard/CryptosOfTheDay";
 import Marketplace from "../components/dashboard/marketplace/Marketplace";
 import Operation from "../components/dashboard/operation/Operation";
-import { AppContext } from "../context/Context";
 import { theme } from "../theme/theme";
 
 const Dashboard = () => {
