@@ -13,7 +13,7 @@ const ResponseSearch = () => {
         <FiArrowDown className="arrow" />
         Réponse à votre recherche <FiArrowDown className="arrow" />
       </h3>
-      <p>{loading ? <Loading heightSize="100" widthSize="100" /> : responseSearchData}</p>
+      {loading ? <Loading heightSize="100" widthSize="100" /> : <p>{responseSearchData}</p>}
     </ResponseSearchStyled>
   );
 };
@@ -32,6 +32,7 @@ const ResponseSearchStyled = styled.div`
   justify-content: center;
 
   h3 {
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;

@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import CryptosOfTheDay from "../components/dashboard/CryptosOfTheDay";
 import Marketplace from "../components/dashboard/marketplace/Marketplace";
@@ -18,9 +17,8 @@ const Dashboard = () => {
 };
 
 const DashboardStyled = styled.div`
-  min-height: 100vh;
-  max-height: 100vh;
-  max-width: 100vw;
+  height: 100vh;
+  width: 100vw;
   background-color: ${theme.colors.light};
   display: flex;
   flex-direction: column;

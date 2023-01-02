@@ -32,7 +32,7 @@ const SearchBar = () => {
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+        Authorization: `Bearer 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`,
       },
     })
       .then((response) => response.json())

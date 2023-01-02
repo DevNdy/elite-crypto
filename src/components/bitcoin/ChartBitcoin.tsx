@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { theme } from "../../theme/theme";
 import { Line } from "react-chartjs-2";
@@ -16,7 +16,7 @@ const ChartBitcoin = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "f00c50b32amsh870af7005927c13p198a37jsn6cf946d213f5",
+        "X-RapidAPI-Key": `f00c50b32amsh870af7005927c13p198a37jsn6cf946d213f5`,
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -111,8 +111,8 @@ const ChartBitcoinStyled = styled.div`
   height: 400px;
   width: 820px;
   margin: 60px 0 0 240px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
   background-color: ${theme.colors.white};
 `;
 

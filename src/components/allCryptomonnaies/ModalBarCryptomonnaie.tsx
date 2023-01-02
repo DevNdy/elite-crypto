@@ -31,16 +31,16 @@ const ModalBarCryptomonnaieStyled = styled.a`
   height: 35px;
   width: 530px;
   margin: 9px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   text-decoration: none;
+  font-size: 14px;
   color: ${theme.colors.black};
   border-top: 0.5px solid ${theme.colors.white};
   border-bottom: 0.5px solid ${theme.colors.white};
   transition: 0.3s;
-  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
   &:hover {
     border-top: 0.5px solid ${theme.colors.blackLight};

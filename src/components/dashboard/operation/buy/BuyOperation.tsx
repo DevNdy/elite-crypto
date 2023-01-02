@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../../context/Context";
 import { theme } from "../../../../theme/theme";
@@ -29,10 +29,10 @@ const BuyOperationStyled = styled.div`
   flex-direction: column;
 
   h3 {
+    margin-top: 25px;
     color: ${theme.colors.blackLight};
     font-weight: 100;
     font-size: 14px;
-    margin-top: 25px;
   }
 
   .tokenBuy {

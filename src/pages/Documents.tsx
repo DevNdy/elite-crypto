@@ -29,7 +29,7 @@ const DocumentsStyled = styled.div`
   justify-content: center;
 
   .leftDoc {
-    margin-top: 50px;
+    margin: 40px 0 0 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
