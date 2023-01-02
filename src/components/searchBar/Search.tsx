@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
 
 const Search = () => {
+  const { searchData, setSearchData } = useContext(AppContext);
+
   return (
     <SearchStyled>
       <i className="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Faire une recherche quelconque..." />
+      <input
+        type="text"
+        placeholder="Faire une recherche quelconque..."
+        value={searchData}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchData(e.target.value)}
+      />
     </SearchStyled>
   );
 };

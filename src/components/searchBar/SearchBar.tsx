@@ -1,19 +1,50 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
+import Loading from "../../ui-reusable/Loading";
 import Search from "./Search";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+  const { loading, setLoading, setResponseSearchData, searchData } = useContext(AppContext);
+
   //date of day
   const date = new Date();
   const options: {} = { weekday: "long", year: "numeric", month: "long", day: "2-digit" };
   const dateOfDay = date.toLocaleDateString("fr-FR", options);
 
+  async function handleSubmitSearch(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    navigate({
+      pathname: "/recherche",
+    });
+    setLoading(true);
+    setResponseSearchData("");
+
+    await fetch("https://api.openai.com/v1/completions", {
+      method: "POST",
+      body: JSON.stringify({
+        model: "text-davinci-003",
+        prompt: `dis moi ${searchData}`,
+        max_tokens: 4000,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setResponseSearchData(data.choices[0].text));
+    setLoading(false);
+  }
+
   return (
     <SearchBarStyled>
-      <form>
+      <form onSubmit={handleSubmitSearch}>
         <Search />
-        <button>Go</button>
+        {loading ? <Loading heightSize="50" widthSize="50" /> : <button>Go</button>}
       </form>
       <h3>{dateOfDay}</h3>
     </SearchBarStyled>
