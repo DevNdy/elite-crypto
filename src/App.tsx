@@ -5,6 +5,7 @@ import SearchBar from "./components/searchBar/SearchBar";
 import Bitcoin from "./pages/Bitcoin";
 import AllCryptos from "./pages/AllCryptos";
 import Documents from "./pages/Documents";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/bitcoin" element={<Bitcoin />} />
         <Route path="/cryptomonnaies" element={<AllCryptos />} />
         <Route path="/doc" element={<Documents />} />
+        <Route path="/recherche" element={<SearchPage />} />
       </Routes>
     </>
   );

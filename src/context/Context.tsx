@@ -17,6 +17,12 @@ type ContextProps = {
   setPriceCryptoSelect: (newState: number) => void;
   amountBuy: number;
   setAmountBuy: (newState: number) => void;
+  loading: boolean;
+  setLoading: (newState: boolean) => void;
+  responseSearchData: string;
+  setResponseSearchData: (newState: string) => void;
+  searchData: string;
+  setSearchData: (newState: string) => void;
 };
 
 const initialValue = {
@@ -35,6 +41,12 @@ const initialValue = {
   setPriceCryptoSelect: () => {},
   amountBuy: 0,
   setAmountBuy: () => {},
+  loading: false,
+  setLoading: () => {},
+  responseSearchData: "",
+  setResponseSearchData: () => {},
+  searchData: "",
+  setSearchData: () => {},
 };
 
 export const AppContext = createContext<ContextProps>(initialValue);
@@ -118,6 +130,11 @@ export function AppContextProvider({ children }: ChildrenProps) {
   const [priceCryptoSelect, setPriceCryptoSelect] = useState(initialValue.priceCryptoSelect);
   const [amountBuy, setAmountBuy] = useState(initialValue.amountBuy);
 
+  //-----------------------Search------------------------------
+  const [searchData, setSearchData] = useState(initialValue.searchData);
+  const [responseSearchData, setResponseSearchData] = useState(initialValue.responseSearchData);
+  const [loading, setLoading] = useState(initialValue.loading);
+
   return (
     <AppContext.Provider
       value={{
@@ -132,6 +149,12 @@ export function AppContextProvider({ children }: ChildrenProps) {
         setPriceCryptoSelect,
         amountBuy,
         setAmountBuy,
+        responseSearchData,
+        setResponseSearchData,
+        loading,
+        setLoading,
+        searchData,
+        setSearchData,
       }}
     >
       {children}
