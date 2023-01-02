@@ -47,7 +47,7 @@ const ResponseQuestion = () => {
 const ResponseQuestionStyled = styled.div`
   height: 680px;
   width: 580px;
-  margin: 50px 0 0 20px;
+  margin: 40px 0 0 20px;
   padding: 10px;
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;

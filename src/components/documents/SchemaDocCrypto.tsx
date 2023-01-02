@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../theme/theme";
+import schema from "../../assets/images/schema.jpg";
 
 const SchemaDocCrypto = () => {
   return (
     <SchemaDocCryptoStyled>
-      <img
-        src="https://www.eanet.fr/wp-content/uploads/2018/12/schema-blockchain.jpg"
-        alt="schema"
-      />
+      <img src={schema} alt="schema" />
     </SchemaDocCryptoStyled>
   );
 };

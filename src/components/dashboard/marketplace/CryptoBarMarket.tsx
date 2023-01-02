@@ -32,13 +32,13 @@ const CryptoBarMarketStyled = styled.a`
   height: 40px;
   margin-top: 25px;
   text-decoration: none;
+  border-top: 0.5px solid ${theme.colors.white};
+  border-bottom: 0.5px solid ${theme.colors.white};
+  transition: 0.3s;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-top: 0.5px solid ${theme.colors.white};
-  border-bottom: 0.5px solid ${theme.colors.white};
-  transition: 0.3s;
 
   &:hover {
     border-top: 0.5px solid ${theme.colors.blackLight};
@@ -49,12 +49,12 @@ const CryptoBarMarketStyled = styled.a`
   h4 {
     padding-left: 15px;
     width: 250px;
+    margin: 0;
     color: ${theme.colors.black};
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin: 0;
 
     img {
       margin: 0 20px 0 10px;

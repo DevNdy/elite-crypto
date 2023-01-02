@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "../../../context/Context";
 import { theme } from "../../../theme/theme";
@@ -10,7 +10,7 @@ const SelectCrypto = () => {
   return (
     <SelectCryptoStyled>
       <select value={priceCryptoSelect} onChange={(e: any) => setPriceCryptoSelect(e.target.value)}>
-        <option value="0">Choix crypto</option>
+        <option value="0">Choix Crypto</option>
         {cryptos
           .filter((f: CryptosProps) => f.rank < 6)
           .map((e: CryptosProps) => (

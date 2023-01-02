@@ -6,7 +6,6 @@ import SimpleCryptoData from "./SimpleCryptoData";
 const CryptosOfTheDay = () => {
   const { cryptos, cryptoHighChange, cryptoLowChange, lastListingCrypto, topVolume } =
     useContext(AppContext);
-  console.log(cryptos);
 
   return (
     <CryptosOfTheDayStyled>

@@ -50,9 +50,9 @@ const MarketplaceStyled = styled.div`
   background-color: ${theme.colors.white};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
   border-radius: 8px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  overflow: auto;
 
   .divMarketplace {
     width: 750px;

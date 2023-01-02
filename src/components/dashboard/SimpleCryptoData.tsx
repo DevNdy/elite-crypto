@@ -40,14 +40,14 @@ const SimpleCryptoDataStyled = styled.a`
   padding: 8px;
   background-color: ${theme.colors.white};
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
-  transition: 0.5s;
-  cursor: pointer;
-  text-decoration: none;
 
   &:hover {
     background-color: ${theme.colors.secondaryColor};
