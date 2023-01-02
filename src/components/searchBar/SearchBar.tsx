@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AppContext } from "../../context/Context";
 import { theme } from "../../theme/theme";
+import Loading from "../../ui-reusable/Loading";
 import Search from "./Search";
 
 const SearchBar = () => {
   const navigate = useNavigate();
-  const { loading, setLoading, responseSearchData, setResponseSearchData } = useContext(AppContext);
+  const { loading, setLoading, setResponseSearchData, searchData } = useContext(AppContext);
 
   //date of day
   const date = new Date();
@@ -26,7 +27,7 @@ const SearchBar = () => {
       method: "POST",
       body: JSON.stringify({
         model: "text-davinci-003",
-        prompt: ``,
+        prompt: `dis moi ${searchData}`,
         max_tokens: 4000,
       }),
       headers: {
@@ -43,7 +44,7 @@ const SearchBar = () => {
     <SearchBarStyled>
       <form onSubmit={handleSubmitSearch}>
         <Search />
-        <button>Go</button>
+        {loading ? <Loading heightSize="50" widthSize="50" /> : <button>Go</button>}
       </form>
       <h3>{dateOfDay}</h3>
     </SearchBarStyled>
