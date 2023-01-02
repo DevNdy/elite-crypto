@@ -68,8 +68,8 @@ const CryptoBarMarketStyled = styled.a`
   }
 
   .change {
-    width: 50px;
-    margin-right: 105px;
+    width: 65px;
+    margin-right: 115px;
     text-align: end;
   }
 
